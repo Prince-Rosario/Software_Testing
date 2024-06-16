@@ -4,6 +4,7 @@ from solution import Solution
 
 class TestMinWindowSubstring(unittest.TestCase):
     def setUp(self):
+        """Prepare resources for each test."""
         self.solution = Solution()
 
     def test_empty_string_t(self):
@@ -19,11 +20,11 @@ class TestMinWindowSubstring(unittest.TestCase):
         self.assertEqual(self.solution.minWindow("a", "b"), "")
 
     def test_example_cases(self):
-        """Test the provided example cases."""  ### test parametrization by iterating over multiple input-output pairs
+        """Test the provided example cases.""" ### test parametrization by iterating over multiple input-output pairs
         cases = [
-            ("ADOBECODEBANC", "ABC", "BANC"),
-            ("a", "a", "a"),
-            ("a", "aa", "")
+            ("ADOBECODEBANC", "ABC", "BANC"),  # Expected output: "BANC"
+            ("a", "a", "a"),  # Expected output: "a"
+            ("a", "aa", "")  # Expected output: ""
         ]
         for s, t, expected in cases:
             with self.subTest(s=s, t=t):
@@ -50,12 +51,10 @@ class TestMinWindowSubstring(unittest.TestCase):
     def test_all_characters_in_s_needed_for_t(self):
         """Test where all characters in s are needed for t."""
         self.assertEqual(self.solution.minWindow("ab", "ab"), "ab")
-        
+
     def test_s_contains_repeated_sequences_of_t(self):
         """Test with s containing repeated sequences of t."""
         self.assertEqual(self.solution.minWindow("ababcabc", "abc"), "abc")
-
-
 
 if __name__ == "__main__":
     unittest.main()
