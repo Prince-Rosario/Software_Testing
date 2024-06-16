@@ -13,3 +13,5 @@ The tests for the solution are located in test_solution.py. The TestMinWindowSub
 ## Solution credits
 
 [neet code](https://github.com/neetcode-gh/leetcode/blob/main/python/0076-minimum-window-substring.py)
+
+The time complexity of used solution is **O(S+T)**, where **S** is the length of string **s** and **T** is the length of string **t**.
